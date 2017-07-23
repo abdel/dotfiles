@@ -5818,7 +5818,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 375 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>466 472 796 473 0 0 1680 1027 </string>
+	<string>466 450 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -6614,7 +6614,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>AD7CB449-3BB4-44D3-90DC-CFE39FBE17A5</string>
 	<key>NoSyncLastTipTime</key>
-	<real>522312577.05030203</real>
+	<real>522461039.94125199</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6627,6 +6627,8 @@
 	<real>479497009.48278099</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>488755840.85513198</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -6655,6 +6657,7 @@
 		<string>0019</string>
 		<string>0019</string>
 		<string>0020</string>
+		<string>0021</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
