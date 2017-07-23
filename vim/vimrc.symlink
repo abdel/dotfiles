@@ -1,4 +1,125 @@
-syntax on
-
-" Wrap gitcommit file types at the appropriate length
+set nocompatible
 filetype indent plugin on
+
+set mouse=a
+
+" show line numbers
+set number
+set nowrap
+" Use space key as leader key
+let mapleader = "\<Space>"
+
+" Intent with 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+set noswapfile
+
+" Normal backspace
+set backspace=indent,eol,start
+
+set clipboard=unnamed
+
+set autoread
+au CursorHold * checktime
+
+" Load plugins ...
+call plug#begin('~/.vim/plugged')
+
+Plug 'kien/ctrlp.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'mileszs/ack.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'Shougo/neocomplete.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-vinegar'
+Plug 'ervandew/supertab'
+Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript'
+Plug 'azakus/vim-webcomponents'
+Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go'
+
+Plug 'leshill/vim-json'
+Plug 'editorconfig/editorconfig-vim'
+call plug#end()
+
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>n :tabnew<CR>:vsplit<CR>:vsplit<CR>
+
+" <Tab> to cycle through splits
+noremap <Tab> <C-w>w
+noremap <S-Tab> <C-w>p
+
+" <Leader><Tab> to cycle through tabs
+noremap <Leader><Tab> gt
+
+" Close the current split
+nmap <leader>x <C-w>c
+
+" Duplicate line
+nnoremap dl mzyyP
+
+nnoremap Y y$
+
+set splitbelow
+set splitright
+
+" Reload vimrc
+:nmap <leader>r :source $MYVIMRC<CR>
+
+" Speed up CtrlP
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others --exclude-standard %s']
+let g:ctrlp_use_caching = 0
+
+" Use ag instead of ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Color Scheme
+syntax enable
+set background=dark
+colorscheme solarized
+
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" Ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+
+" JavaScript
+let g:jsx_ext_required = 0
+let g:javascript_plugin_flow = 1
+
+" Go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go nmap <Leader>gd <Plug>(go-doc-browser)
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default
+" <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
