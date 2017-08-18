@@ -8,5 +8,4 @@
 
 # Experiments
 prefixes.txt
-**/output/
-**/input/*
+*.log
