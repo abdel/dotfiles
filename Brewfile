@@ -36,7 +36,6 @@ brew 'watch'
 brew 'jq'
 brew 'autojump'
 brew 'the_silver_searcher'
-brew 'python3'
 brew 'nmap'
 brew 'yarn'
 
