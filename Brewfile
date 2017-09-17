@@ -38,6 +38,7 @@ brew 'autojump'
 brew 'the_silver_searcher'
 brew 'nmap'
 brew 'yarn'
+brew 'reattach-to-user-namespace'
 
 # Applications
 cask '1password'
