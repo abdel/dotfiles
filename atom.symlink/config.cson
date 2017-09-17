@@ -38,6 +38,10 @@
       "vendor"
     ]
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
   editor:
     fontFamily: "Menlo"
     fontSize: 15
