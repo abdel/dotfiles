@@ -9,3 +9,5 @@
 # Experiments
 prefixes.txt
 *.log
+
+*.local.*

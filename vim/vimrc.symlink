@@ -3,15 +3,19 @@ filetype indent plugin on
 
 set mouse=a
 
-" show line numbers
+set encoding=utf-8
+
+" Show line numbers
 set number
 set nowrap
+
 " Use space key as leader key
 let mapleader = "\<Space>"
 
 " Intent with 2 spaces
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 set smartindent
 set autoindent
@@ -20,6 +24,7 @@ set noswapfile
 " Normal backspace
 set backspace=indent,eol,start
 
+" System clipboard
 set clipboard=unnamed
 
 set autoread
@@ -43,6 +48,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'azakus/vim-webcomponents'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
 
 Plug 'leshill/vim-json'
 Plug 'editorconfig/editorconfig-vim'
@@ -96,11 +102,29 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': ['autopep8']
 \}
 
 " JavaScript
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
+
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+
+" Python
+let python_highlight_all=1
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
 
 " Go
 let g:go_highlight_functions = 1

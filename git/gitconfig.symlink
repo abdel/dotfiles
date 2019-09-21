@@ -33,3 +33,6 @@
         default = simple
 [commit]
 #	gpgsign = true
+[user]
+	email = 181392+abdel@users.noreply.github.com
+	name = Abdelrahman Ahmed
