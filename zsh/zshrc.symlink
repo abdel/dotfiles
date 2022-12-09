@@ -56,16 +56,38 @@ setopt nosharehistory
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/Abdel/Developer/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/Abdel/Developer/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/Abdel/Developer/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/Users/Abdel/Developer/anaconda/etc/profile.d/conda.sh"
+    if [ -f "/Users/Abdel/Developer/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/Abdel/Developer/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/Abdel/Developer/anaconda/bin:$PATH"
+        export PATH="/Users/Abdel/Developer/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# >>> conda_x86 initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_x86_setup="$('/Users/Abdel/Developer/miniforge3_x86_64/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/Abdel/Developer/miniforge3_x86_64/etc/profile.d/conda.sh" ]; then
+        . "/Users/Abdel/Developer/miniforge3_x86_64/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/Abdel/Developer/miniforge3_x86_64/bin:$PATH"
+    fi
+fi
+unset __conda_x86_setup
+# <<< conda_x86 initialize <<<
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/Abdel/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/Abdel/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+! { which werf | grep -qsE "^/Users/Abdel/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "1.2" "stable")

@@ -17,6 +17,8 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        autocrlf = input
+        ignorecase = false
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -32,7 +34,7 @@
         # Setting to git 2.0 default to suppress warning message
         default = simple
 [commit]
-#	gpgsign = true
+        # gpgsign = true
 [user]
-	email = 181392+abdel@users.noreply.github.com
-	name = Abdelrahman Ahmed
+        email = 181392+abdel@users.noreply.github.com
+        name = Abdelrahman Ahmed
