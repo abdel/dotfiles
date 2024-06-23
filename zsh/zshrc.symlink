@@ -40,17 +40,6 @@ done
 
 unset config_files
 
-# Better history
-# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
-setopt noincappendhistory
-setopt nosharehistory
-
 # added by travis gem
 [ -f /Users/Abdel/.travis/travis.sh ] && source /Users/Abdel/.travis/travis.sh
 
@@ -91,3 +80,4 @@ export PATH="$HOME/.poetry/bin:$PATH"
 [[ -f /Users/Abdel/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/Abdel/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 ! { which werf | grep -qsE "^/Users/Abdel/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "1.2" "stable")
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
