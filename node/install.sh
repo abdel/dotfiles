@@ -1,6 +1,6 @@
 # install node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-nvm install --lts
+curl -fsSL https://fnm.vercel.app/install | bash
+fnm install --lts
 
 if test ! $(which spoof)
 then

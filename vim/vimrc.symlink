@@ -51,7 +51,7 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 
 Plug 'leshill/vim-json'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 nnoremap <Leader>o :CtrlP<CR>

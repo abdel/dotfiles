@@ -40,44 +40,16 @@ done
 
 unset config_files
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('~/Developer/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "~/Developer/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "~/Developer/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="~/Developer/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# >>> conda_x86 initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_x86_setup="$('~/Developer/miniforge3_x86_64/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "~/Developer/miniforge3_x86_64/etc/profile.d/conda.sh" ]; then
-        . "~/Developer/miniforge3_x86_64/etc/profile.d/conda.sh"
-    else
-        export PATH="~/Developer/miniforge3_x86_64/bin:$PATH"
-    fi
-fi
-unset __conda_x86_setup
-# <<< conda_x86 initialize <<<
+# load z
+source $DOTFILES/zsh/z.sh
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f ~/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . ~/.nvm/versions/node/v14.16.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 ! { which werf | grep -qsE "^~/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "1.2" "stable")
+
+# Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"

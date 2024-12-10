@@ -17,3 +17,6 @@ prefixes.txt
 
 # Node
 node_modules/
+
+support/bruno/personal
+support/scripts/fetch-ui-campaigns/
