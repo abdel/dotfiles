@@ -31,12 +31,6 @@ its content to overwrite or add to the existing `git` configurations.
 **Note:** Use `~/.gitconfig.local` to store sensitive information such
 as the `git` user credentials, e.g.:
 
-```sh
-[user]
-  name = Abdelrahman Ahmed
-  email = abdel@example.com
-```
-
 ## Credits
 
 - [GitHub ❤ ~/](http://dotfiles.github.com/)

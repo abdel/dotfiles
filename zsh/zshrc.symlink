@@ -2,7 +2,7 @@
 export DOTFILES=$HOME/Developer/dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Developer
+export PROJECTS=$HOME/Developer
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -42,6 +42,8 @@ unset config_files
 
 # load z
 source $DOTFILES/zsh/z.sh
+
+export GOPATH=$PROJECTS/go
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
