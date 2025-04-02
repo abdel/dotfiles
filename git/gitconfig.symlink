@@ -37,6 +37,6 @@
         gpgsign = true
 [user]
         email = 181392+abdel@users.noreply.github.com
-        name = Abdelrahman Ahmed
+        name = abdel
 [gpg]
 	program = gpg
